@@ -3,9 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>박종한 화이링</title>
+    <title>박종한 화이팅</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      #c {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .button-container {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+      }
+      button {
+        margin-top: 5px;
+      }
+
+      #textboxModal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+        background-color: red;
+      }
+    </style>
   </head>
   <body>
     박종한 화이팅~
+
+    <canvas id="c"></canvas>
+    <div class="button-container">
+      <button id="addTextbox">Add Textbox</button>
+      <button id="removeTextbox">Remove Textbox</button>
+    </div>
+
+    <div id="textboxModal" style="display: none">
+      <input type="text" id="username" placeholder="Enter username" />
+      <input type="password" id="password" placeholder="Enter password" />
+      <button id="submitBtn" onclick="addTextbox()">Submit</button>
+      <button onclick="closeModal()">Close</button>
+    </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
